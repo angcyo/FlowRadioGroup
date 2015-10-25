@@ -18,7 +18,6 @@ import java.util.List;
 public class FlowRadioGroup extends RadioGroup {
     List<List<View>> mAllViews;//保存所有行的所有View
     List<Integer> mLineHeight;//保存每一行的行高
-    private int mCheckedId = -1;
 
     public FlowRadioGroup(Context context) {
         this(context, null);
@@ -68,6 +67,10 @@ public class FlowRadioGroup extends RadioGroup {
         int count = getChildCount();
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
+            if (child.getVisibility() == View.GONE) {
+                continue;
+            }
+
             measureChild(child, widthMeasureSpec, heightMeasureSpec);
             LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) child.getLayoutParams();
 
@@ -122,11 +125,11 @@ public class FlowRadioGroup extends RadioGroup {
                 LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) child.getLayoutParams();
                 int ld = left + params.leftMargin;
                 int td = top + params.topMargin;
-                int rd = ld + child.getMeasuredWidth();
-                int bd = td + child.getMeasuredHeight();
+                int rd = ld + child.getMeasuredWidth();//不需要加上 params.rightMargin,
+                int bd = td + child.getMeasuredHeight();//不需要加上 params.bottomMargin, 因为在 onMeasure , 中已经加在了 lineHeight 中
                 child.layout(ld, td, rd, bd);
 
-                left += child.getMeasuredWidth() + params.leftMargin + params.rightMargin;
+                left += child.getMeasuredWidth() + params.leftMargin + params.rightMargin;//因为在 这里添加了;
             }
 
             left = getPaddingLeft();

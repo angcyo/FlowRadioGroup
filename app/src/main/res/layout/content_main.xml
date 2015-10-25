@@ -21,21 +21,22 @@
         android:id="@+id/flowRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:background="#00EEDD">
+        android:background="#00EEDD"
+        android:padding="20dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="angcyo" />
+            android:text="125125125521"
+            android:visibility="gone" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#0000FF"
-            android:gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="20dp"
+            android:background="#0000FF"
+            android:gravity="center"
             android:text="anasdfgcyo" />
 
         <RadioButton
