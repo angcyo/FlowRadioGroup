@@ -1,8 +1,8 @@
 # FlowRadioGroup
-流式的RadioGroup, 子RadioButton, 自动流式排列;使用方法和RadioGroup基本一致;
+    流式的RadioGroup, 子RadioButton, 自动流式排列;使用方法和RadioGroup基本一致;
 
 ## 使用方法
-复制项目中的FlowRadioGroup到你的项目,即可;权当RadioGroup使用就行;
+    复制项目中的FlowRadioGroup到你的项目,即可;权当RadioGroup使用就行;
 
 ## 可用API
     int getCheckedRadioButtonIndex() --返回选中按钮的索引位置
